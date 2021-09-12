@@ -1,0 +1,33 @@
+baseURL = "http://Lazybear.online/"
+languageCode = "zh"
+disqusShortname = "spc"
+defaultContentLanguage = "zh"
+title = "Lazybear"
+theme = "dream"
+
+enableRobotsTXT = true
+
+[params]
+  # background = "black"
+  backgroundImage = "/img/background.jpg"
+  linkColor = "seagreen"
+
+  author = "苏普承"
+  description = "苏普承的生活记录～"
+  avatar = "/about/whitebear.jpg"
+  motto = "与其感慨路难行，不如马上出发。"
+
+  email = "1124516293@qq.com"
+  github = "spclock"
+  # linkedin = "钺杨g1eny0ung"
+  # codepen = "g1eny0ung"
+  # stackoverflow = "5676489/g1eny0ung"
+
+  siteStartYear = 2020
+
+  favicon = "/favicon.ico"
+
+  # dark mode
+  darkLinkColor = "darkseagreen"
+  darkNav = true
+  dark404Button = true
