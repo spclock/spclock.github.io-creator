@@ -1,33 +1,142 @@
-baseURL = "http://Lazybear.online/"
-languageCode = "zh"
-disqusShortname = "spc"
-defaultContentLanguage = "zh"
-title = "Lazybear"
-theme = "dream"
 
-enableRobotsTXT = true
+
+baseURL = "http://shuangpinai.top/"
+# [en, zh-cn, fr, ...] determines default content language
+defaultContentLanguage = "zh-cn"
+# 网站语言, 仅在这里 CN 大写
+languageCode = "zh-CN"
+title = "双皮奶"
+# markdown中使用emoji
+enableEmoji  = true
+
+
+# Change the default theme to be use when building the site with Hugo
+theme = "FeelIt"
 
 [params]
-  # background = "black"
-  backgroundImage = "/img/background.jpg"
-  linkColor = "seagreen"
+  # FeelIt 更改 | 0.2.0 FeelIt 主题版本
+  version = "1.0.X"
+  # 网站描述
+  description = "这是我的全新 Hugo 网站"
+  # 网站关键词
+  keywords = ["Theme", "Hugo"]
+  # 网站默认主题样式 ("light", "dark", "auto")
+  defaultTheme = "auto"
+  # 公共 git 仓库路径，仅在 enableGitInfo 设为 true 时有效
+  gitRepo = ""
+  # FeelIt 新增 | 0.1.1 哪种哈希函数用来 SRI, 为空时表示不使用 SRI
+  # ("sha256", "sha384", "sha512", "md5")
+  fingerprint = ""
+  # FeelIt 新增 | 0.2.0 日期格式
+  dateFormat = "2006-01-02"
+  # 网站图片, 用于 Open Graph 和 Twitter Cards
+  images = ["/logo.png"]
+  # FeelIt 新增 | 1.0.0 是否启用 CSS 和 JS 源映射
+  SourceMap = false
 
-  author = "苏普承"
-  description = "苏普承的生活记录～"
-  avatar = "/about/whitebear.jpg"
-  motto = "与其感慨路难行，不如马上出发。"
+ # FeelIt 新增 | 0.2.0 应用图标配置
+  [params.app]
+    # 当添加到 iOS 主屏幕或者 Android 启动器时的标题, 覆盖默认标题
+    title = "FeelIt"
+    # 是否隐藏网站图标资源链接
+    noFavicon = false
+    # 更现代的 SVG 网站图标, 可替代旧的 .png 和 .ico 文件
+    svgFavicon = ""
+    # Android 浏览器主题色
+    themeColor = "#ffffff"
+    # Safari 图标颜色
+    iconColor = "#5bbad5"
+    # Windows v8-10磁贴颜色
+    tileColor = "#da532c"
+  
+  [params.search]
+    enable = true
+    # 搜索引擎的类型 ("lunr", "algolia")
+    type = "lunr"
+    # 文章内容最长索引长度
+    contentLength = 4000
+    # 搜索框的占位提示语
+    placeholder = ""
+    # FeelIt 新增 | 0.2.1 最大结果数目
+    maxResultLength = 10
+    # FeelIt 新增 | 0.2.3 结果内容片段长度
+    snippetLength = 50
+    # FeelIt 新增 | 0.2.1 搜索结果中高亮部分的 HTML 标签
+    highlightTag = "em"
+    # FeelIt 新增 | 0.2.4 是否在搜索索引中使用基于 baseURL 的绝对路径
+    absoluteURL = false
+    [params.search.algolia]
+      index = ""
+      appID = ""
+      searchKey = ""
 
-  email = "1124516293@qq.com"
-  github = "spclock"
-  # linkedin = "钺杨g1eny0ung"
-  # codepen = "g1eny0ung"
-  # stackoverflow = "5676489/g1eny0ung"
+  ###################################################### 主页配置
+  [params.home]
+    # FeelIt 新增 | 0.2.0 RSS 文章数目
+    rss = 10
+    # 主页个人信息
+    [params.home.profile]
+      enable = true
+      # Gravatar 邮箱，用于优先在主页显示的头像
+      gravatarEmail = ""
+      # 主页显示头像的 URL
+      avatarURL = "/img/dog.jpg"
+      # FeelIt 更改 | 0.2.7 主页显示的网站标题 (支持 HTML 格式)
+      title = ""
+      # 主页显示的网站副标题
+      subtitle = "苏普承的博客 "
+      # 是否为副标题显示打字机动画
+      typeit = true
+      # 是否显示社交账号
+      social = true
 
-  siteStartYear = 2020
+  # 作者的社交信息设置
+  [params.social]
+    GitHub = "spclock"
+    Bilibili = "11915790?spm_id_from=333.1007.0.0"
+    Email = "1124516293@qq.com"
 
-  favicon = "/favicon.ico"
 
-  # dark mode
-  darkLinkColor = "darkseagreen"
-  darkNav = true
-  dark404Button = true
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    # you can add extra information before the name (HTML format is supported), such as icons
+    pre = ""
+    # you can add extra information after the name (HTML format is supported), such as icons
+    post = ""
+    name = "所有文章"
+    url = "/posts/"
+    # title will be shown when you hover on this menu link
+    title = ""
+    weight = 1
+  [[menu.main]]
+    identifier = "tags"
+    pre = ""
+    post = ""
+    name = "标签"
+    url = "/tags/"
+    title = ""
+    weight = 2
+  [[menu.main]]
+    identifier = "categories"
+    pre = ""
+    post = ""
+    name = "分类"
+    url = "/categories/"
+    title = ""
+    weight = 3
+
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+
+
+
+# Markup related configuration in Hugo
+[markup]
+  # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
+  [markup.highlight]
+    # false is a necessary configuration (https://github.com/khusika/FeelIt/issues/158)
+    noClasses = false
